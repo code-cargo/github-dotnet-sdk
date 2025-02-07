@@ -2,9 +2,12 @@ name: "Build and test .NET SDK"
 
 on:
   pull_request:
-  workflow_dispatch:
+    branches:
+      - "main"
+      - "boxbuild"
   push:
     branches:
+      - "main"
       - "boxbuild"
 
 jobs:
