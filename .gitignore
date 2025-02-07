@@ -117,3 +117,6 @@ coveragereport/*
 
 # Kiota
 .kiota.log
+
+# JetBrains
+.idea

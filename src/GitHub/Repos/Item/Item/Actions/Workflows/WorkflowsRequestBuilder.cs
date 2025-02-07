@@ -29,6 +29,20 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows
                 return new global::GitHub.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
+
+        /// <summary>Gets an item from the GitHub.repos.item.item.actions.workflows.item collection</summary>
+        /// <param name="position">The ID of the workflow. You can also pass the workflow file name as a string.</param>
+        /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder"/></returns>
+        public global::GitHub.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("workflow_id", position);
+                return new global::GitHub.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
+
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Actions.Workflows.WorkflowsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -96,7 +110,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows
         /// Lists the workflows in a repository.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-        public partial class WorkflowsRequestBuilderGetQueryParameters 
+        public partial class WorkflowsRequestBuilderGetQueryParameters
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
