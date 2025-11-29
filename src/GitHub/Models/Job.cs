@@ -82,7 +82,7 @@ namespace GitHub.Models
         /// <summary>Attempt number of the associated workflow run, 1 for first attempt and higher if the workflow was re-run.</summary>
         public int? RunAttempt { get; set; }
         /// <summary>The id of the associated workflow run.</summary>
-        public int? RunId { get; set; }
+        public long? RunId { get; set; }
         /// <summary>The ID of the runner group to which this job has been assigned. (If a runner hasn&apos;t yet been assigned, this will be null.)</summary>
         public int? RunnerGroupId { get; set; }
         /// <summary>The name of the runner group to which this job has been assigned. (If a runner hasn&apos;t yet been assigned, this will be null.)</summary>
@@ -176,7 +176,7 @@ namespace GitHub.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
                 { "run_attempt", n => { RunAttempt = n.GetIntValue(); } },
-                { "run_id", n => { RunId = n.GetIntValue(); } },
+                { "run_id", n => { RunId = n.GetLongValue(); } },
                 { "run_url", n => { RunUrl = n.GetStringValue(); } },
                 { "runner_group_id", n => { RunnerGroupId = n.GetIntValue(); } },
                 { "runner_group_name", n => { RunnerGroupName = n.GetStringValue(); } },
@@ -208,7 +208,7 @@ namespace GitHub.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteIntValue("run_attempt", RunAttempt);
-            writer.WriteIntValue("run_id", RunId);
+            writer.WriteLongValue("run_id", RunId);
             writer.WriteIntValue("runner_group_id", RunnerGroupId);
             writer.WriteStringValue("runner_group_name", RunnerGroupName);
             writer.WriteIntValue("runner_id", RunnerId);

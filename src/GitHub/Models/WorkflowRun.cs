@@ -40,7 +40,7 @@ namespace GitHub.Models
         public string CancelUrl { get; set; }
 #endif
         /// <summary>The ID of the associated check suite.</summary>
-        public int? CheckSuiteId { get; set; }
+        public long? CheckSuiteId { get; set; }
         /// <summary>The node ID of the associated check suite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -240,7 +240,7 @@ namespace GitHub.Models
         public string Url { get; set; }
 #endif
         /// <summary>The ID of the parent workflow.</summary>
-        public int? WorkflowId { get; set; }
+        public long? WorkflowId { get; set; }
         /// <summary>The URL to the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -277,7 +277,7 @@ namespace GitHub.Models
                 { "actor", n => { Actor = n.GetObjectValue<global::GitHub.Models.SimpleUser>(global::GitHub.Models.SimpleUser.CreateFromDiscriminatorValue); } },
                 { "artifacts_url", n => { ArtifactsUrl = n.GetStringValue(); } },
                 { "cancel_url", n => { CancelUrl = n.GetStringValue(); } },
-                { "check_suite_id", n => { CheckSuiteId = n.GetIntValue(); } },
+                { "check_suite_id", n => { CheckSuiteId = n.GetLongValue(); } },
                 { "check_suite_node_id", n => { CheckSuiteNodeId = n.GetStringValue(); } },
                 { "check_suite_url", n => { CheckSuiteUrl = n.GetStringValue(); } },
                 { "conclusion", n => { Conclusion = n.GetStringValue(); } },
@@ -308,7 +308,7 @@ namespace GitHub.Models
                 { "triggering_actor", n => { TriggeringActor = n.GetObjectValue<global::GitHub.Models.SimpleUser>(global::GitHub.Models.SimpleUser.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
-                { "workflow_id", n => { WorkflowId = n.GetIntValue(); } },
+                { "workflow_id", n => { WorkflowId = n.GetLongValue(); } },
                 { "workflow_url", n => { WorkflowUrl = n.GetStringValue(); } },
             };
         }
@@ -322,7 +322,7 @@ namespace GitHub.Models
             writer.WriteObjectValue<global::GitHub.Models.SimpleUser>("actor", Actor);
             writer.WriteStringValue("artifacts_url", ArtifactsUrl);
             writer.WriteStringValue("cancel_url", CancelUrl);
-            writer.WriteIntValue("check_suite_id", CheckSuiteId);
+            writer.WriteLongValue("check_suite_id", CheckSuiteId);
             writer.WriteStringValue("check_suite_node_id", CheckSuiteNodeId);
             writer.WriteStringValue("check_suite_url", CheckSuiteUrl);
             writer.WriteStringValue("conclusion", Conclusion);
@@ -353,7 +353,7 @@ namespace GitHub.Models
             writer.WriteObjectValue<global::GitHub.Models.SimpleUser>("triggering_actor", TriggeringActor);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);
-            writer.WriteIntValue("workflow_id", WorkflowId);
+            writer.WriteLongValue("workflow_id", WorkflowId);
             writer.WriteStringValue("workflow_url", WorkflowUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
